@@ -1,0 +1,21 @@
+
+            main.ts
+              ||
+              ||
+          [ts-loader]  (compiles to typescript according to tsconfig.json)
+              ||
+              \/
+            main.js
+              ||
+              \/
+
+           bundle.js
+                              ||
+                     ModuleFederationPlugin
+                              ||
+                              \/
+                        remoteEntry.js
+
+Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running,
+without a full reload. This can significantly speed up development in a few ways:
+

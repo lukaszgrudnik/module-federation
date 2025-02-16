@@ -1,0 +1,16 @@
+# IDE configuration files (JetBrains)
+.idea/
+
+# Shell app specific files
+./shell/node_modules/
+./shell/dist/
+
+# Remote app specific files
+./remote/node_modules/
+./remote/dist/
+
+# Log files
+*.log
+
+# macOS system files
+.DS_Store
