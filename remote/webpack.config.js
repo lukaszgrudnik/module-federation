@@ -24,6 +24,7 @@ module.exports = {
     output: {
         filename: 'bundle2.js',
         path: path.resolve(__dirname, 'dist'),
+        publicPath: 'auto',
     },
     plugins: [
         new HtmlWebpackPlugin(),
@@ -37,7 +38,7 @@ module.exports = {
     ],
     devServer: {
         port: 3001,
-        hot: true,  // Enable HMR
         liveReload: true,
+        hot: false
     }
 }

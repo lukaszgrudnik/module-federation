@@ -4,6 +4,7 @@ const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
     mode: 'development',
+    watch: true,
     entry: './src/main.ts',
     module: {
         // Out of the box, webpack only understands JavaScript and JSON files.
@@ -15,6 +16,10 @@ module.exports = {
                 test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.json$/,
+                type: 'json',
             }
         ]
     },
@@ -24,6 +29,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        publicPath: 'auto',
     },
     plugins: [
         new ModuleFederationPlugin({
@@ -40,8 +46,6 @@ module.exports = {
     ],
     devServer: {
         port: 3000,
-        hot: true,
         liveReload: true,
-        watchFiles: ['./src/**/*.ts'],
     }
 }
