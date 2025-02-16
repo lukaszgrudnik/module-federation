@@ -1,8 +1,9 @@
-declare module 'remote/Dashboard' {
-    export const dashboardElement: HTMLElement;
+import { App } from "./shell-app/app";
+
+
+const app = new App();
+const rootElement = document.getElementById('root');
+if(rootElement) {
+    console.log(rootElement);
+    app.setElement(rootElement);
 }
-
-import('remote/Dashboard').then((module)=> {
-    document.body.appendChild(module.dashboardElement)
-}).catch((error)=> console.log(error));
-
